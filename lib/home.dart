@@ -19,25 +19,28 @@ class _HomeState extends State<Home> {
         ],
       ),
       drawer: new Drawer(
-        new DrawerHeader(
-          child: new Material(),
-        ),
-        new ListTile(
-          title: new Text("Peliculas"),
-          trailing: new Icon(Icons.local_movies),
-        ),
-        new Divider(height: 5.0),
-        new ListTile(
-          title: new Text("Televisión"),
-          trailing: new Icon(Icons.live_tv),
-        ),
-        new Divider(height: 5.0),
-        new ListTile(
-          title: new Text("Cerrar"),
-          trailing: new Icon(Icons.star),
-          onTap: ()=> Navigator.of(context).pop(),
-        ),
-      ),
+          child: new ListView(
+        children: <Widget>[
+          new DrawerHeader(
+            child: new Material(),
+          ),
+          new ListTile(
+            title: new Text("Peliculas"),
+            trailing: new Icon(Icons.local_movies),
+          ),
+          new Divider(height: 5.0),
+          new ListTile(
+            title: new Text("Televisión"),
+            trailing: new Icon(Icons.live_tv),
+          ),
+          new Divider(height: 5.0),
+          new ListTile(
+            title: new Text("Cerrar"),
+            trailing: new Icon(Icons.close),
+            onTap: () => Navigator.of(context).pop(),
+          ),
+        ],
+      )),
       bottomNavigationBar: new BottomNavigationBar(
         items: _getFooterItems(),
       ),
